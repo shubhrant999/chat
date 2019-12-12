@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>Admin page</title>
+  </head>
+  <body>
+    
+    <div class="holder">
+      
+    </div>
+
+   
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+    
+    <script type="text/javascript">      
+      var socket = io.connect('http://' + document.domain + ':' + location.port);
+      var user_name = 'Admin';
+      socket.on( 'connect', function() {
+        socket.emit( 'my event', {
+            data: 'User Connected'
+        })
+
+        $(document).on('click', '.formbutton', function(){ 
+          let reciever = $(this).closest('form').find("[name=reciever]").val();
+          let message = $(this).closest('form').find("[name=message]").val();
+            socket.emit( 'my event', {
+                user_name : user_name,
+                message : message,
+                reciever : reciever
+            })
+            $( 'input.message' ).val( '' ).focus()
+        })
+      })
+
+      contentArray = []; 
+      socket.on( 'my response', function( msg ) {
+        if( typeof msg.user_name !== 'undefined' ) {    
+
+          if(msg.user_name !== 'Admin'){
+            $a = $.inArray( msg.user_name, contentArray );     
+
+            if($a >= 0){
+              $( 'div#'+ msg.user_name+'_msgcontainer').append( '<div><b style="color: #000">'+msg.user_name+'</b> '+msg.message+'</div>' );
+            }else{
+              contentArray.push(msg.user_name);
+              
+              var a = '<div id="'+msg.user_name+'" style="width: 400px;;height:200px;background: #ddd;">'+
+                '<div id="'+msg.user_name+'_msgcontainer">'+
+                  '<div><b style="color: #000">'+msg.user_name+'</b> '+msg.message+'</div>'+
+                '</div>'+
+                '<form>'+
+                  '<input type="hidden" name="reciever" class="reciever" value="'+msg.user_name+'"/>'+
+                  '<input type="text" name="message" class="message" placeholder="Message"/>'+
+                  '<input type="button" class="formbutton" value="Send"/>'+
+                '</form>'+
+              '</div>';
+              $( 'div.holder').append(a);
+            }
+          }else{
+            $( 'div#'+ msg.reciever+'_msgcontainer').append( '<div><b style="color: #000">'+msg.user_name+'</b> '+msg.message+'</div>' );
+          }       
+                
+          
+        }
+      })
+      
+        
+
+                 
+    </script>
+  </body>
+  </html>
