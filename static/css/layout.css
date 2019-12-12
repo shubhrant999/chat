@@ -1,0 +1,347 @@
+
+/* Table of Content
+==================================================
+	#Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face */
+	
+/* #Site Styles
+================================================== */
+
+/* #Page Styles
+================================================== */
+	.notice {
+		width: 100%;
+		background: #fff;
+		border-bottom: 4px solid #eaeff3;
+		color: #e34848;
+		position: fixed;
+		top: 0;
+		font-size: 14px;
+		font-weight: bold;
+		height: 45px;
+		-moz-box-shadow:0px 0px 3px 1px rgba(0,0,0,0.3);
+		-webkit-box-shadow:0px 0px 3px 1px rgba(0,0,0,0.3);
+		box-shadow:0px 0px 3px 1px rgba(0,0,0,0.3);
+	}
+	
+	.notice p.warn {
+		text-align: center;
+		line-height: 45px;
+	}
+	.errormessage a.close {
+		background: url(../images/errormessage.gif) no-repeat top left;
+		text-indent: -9999px;
+		margin-right: 15px;
+		margin-top: 20px;
+		  padding: 0 7px;
+	}
+	
+	.notice a.close {
+		width: 9px;
+		height: 9px;
+		float: right;
+		background: url(../images/close.png) no-repeat top left;
+		text-indent: -9999px;
+		margin-right: 15px;
+		margin-top: 20px;
+	}
+	
+	.notice a.close:hover {
+		background: url(../images/close-hover.png) no-repeat top left;		
+	}
+	
+	.login-box-bg {
+  position: relative;
+  z-index: 5;
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+.install, .tab-s {
+  text-align: center;
+  display: block;
+}
+div.errormessage {
+  background-color: #FFFFE1;
+  border: 1px dashed #CFCFCF;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  padding: 6px 8px 6px 32px;
+  line-height: 18px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:13px;
+}
+.tab-s, .tab-u, .tab-g, .tab-r {
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #3C3C3C;
+}
+.title-br {
+  border-bottom: 1px #E2E2E2 solid;
+  font-size: 16px!important;
+  color: #000!important;
+}
+input.subbutton-forget {
+  padding: 4px 17px;
+  font-weight: 300;
+  font-size: 17px;
+  color: #fff;
+  text-shadow: 0px 1px 0 rgba(0,0,0,0.25);
+  background: #56c2e1;
+  border: 1px solid #46b3d3;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 31px;
+  float: right;
+}
+.report-panel{
+	font-family: 'Open Sans', sans-serif;
+	font-size:20px;
+	  color: #000;
+	font-weight:bold;
+	text-align:center;
+	padding-top:120px;
+}
+	.form-bg {
+		width: 400px;
+		margin: 17px auto 0;
+		  position: relative;
+  z-index: 5;
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  font-family:Arial, Helvetica, sans-serif;
+		}
+		.login-title {
+  padding: 20px 30px;
+}
+		.input-field {
+  padding: 0 30px 25px 30px;
+  font-weight: normal;
+}
+.input-field td {
+  font-size: 13px;
+  padding-bottom: 3px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.input-field td:last-child {
+  padding-top: 5px;
+}
+.input-field td input.flat {
+  width: 340px;
+  padding: 10px 25px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #9d9e9e;
+  text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+  background: #fff;
+  border: 1px solid #DDD;
+  border-radius: 5px;
+  margin-bottom:0;
+}
+.login-footer {
+  padding: 25px 30px;
+  overflow: auto;
+  border-top: 1px solid #fff;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.15);
+  -moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15);
+  -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15);
+}
+.login-footer tr td {
+	vertical-align:middle;
+}
+.login-footer input.subbutton {
+  padding: 4px 17px;
+  font-weight: 300;
+  font-size: 17px;
+  color: #fff;
+  text-shadow: 0px 1px 0 rgba(0,0,0,0.25);
+  background: #56c2e1;
+  border: 1px solid #46b3d3;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 31px;
+  float:right;
+}
+.login-footer label{
+	margin-left:0;
+}
+.login-footer label a {
+  font-size: 11px;
+  font-weight: normal;
+  color: #767676;
+  text-decoration: underline;
+  font-family:Arial, Helvetica, sans-serif;
+}
+	.footer-tagline {
+  text-align: center;
+  width: 100%;
+  padding-top: 17px;
+  font-size: 14px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+	/*.form-bg form {
+		width: 360px;
+		height: 239px;
+		background: #fff url(../images/bg_form.jpg) repeat-x top left;		
+		-moz-border-radius:4px;
+		-webkit-border-radius:4px;
+		border-radius:4px; 
+		border:3px solid #ddd;
+	}*/
+	.form-bg form h2 {
+		font-size: 14px;
+		font-weight: bold;
+		color: #555555;
+		font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		background: url(../images/logo-adserver.png) no-repeat;
+		line-height: 45px;
+		margin-bottom: 10px;
+		width: 270px;
+ 		height: 70px;
+  		margin: 0 auto;
+	}
+	/*.form-bg form h2 {
+		font-size: 14px;
+		font-weight: bold;
+		color: #555555;
+		font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-shadow: 0 1px 0 #fff;
+		filter: dropshadow(color=#fff, offx=0, offy=1);
+		line-height: 45px;
+		margin-bottom: 24px;
+		margin-left:25px;
+	}*/
+	
+	/*input[type="text"], input[type="password"]{
+		box-shadow: 0px 0px 0px 4px #f2f5f7;
+		width: 290px;
+		height: 33px;
+
+		padding: 0 10px 0 10px;
+		margin: 0 auto;
+		color: #aeaeae;
+		border: 1px solid #bec2c4;
+	}*/
+	
+	input[type="text"]:focus, input[type="password"]:focus{
+		box-shadow: 0px 0px 0px 4px #e0f1fc;
+		border:1px solid #7dc6dd;
+	}
+	
+	input[type="checkbox"] {
+		vertical-align: middle;
+	}
+	
+	
+	button {
+		background:url(../images/login.png) no-repeat;
+		width:82px;
+		height:32px;
+		border:0px;
+		float: right;
+		margin-right: 24px;
+	}
+	
+	button:hover {
+		background:url(../images/login_hover.png) no-repeat;
+		width:82px;
+		height:32px;
+		border:0px;
+	}
+	
+	button:active {
+		background:url(../images/login_active.png) no-repeat;
+		width:82px;
+		height:32px;
+		border:0px;
+	}	
+	
+	
+	label {
+		display: inline;
+		margin-left: 24px;
+		vertical-align: middle;
+	}
+	
+	label span {
+		color: 555555;
+		font-size: 12px;
+	}
+	
+	p.forgot {
+		text-align: center;
+		margin-top: 10px;
+		margin-left:-55px;
+		color: #fff;
+		font-size: 12px;
+		font-weight: bold;
+		text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+	}
+	
+	p.forgot a {
+		color: #cbebf6;
+		text-decoration: none;
+		transition: color 0.5s linear;
+		-moz-transition: color 0.5s linear;
+		-webkit-transition: color 0.5s linear;
+		-o-transition: color 0.5s linear;
+	}
+
+	p.forgot a:hover {
+		color: #65c4e5;
+	}
+
+	
+
+/* #Media Queries
+================================================== */
+	
+	/* iPad Portrait/Browser */
+	@media only screen and (min-width: 768px) and (max-width: 991px) {}
+	
+	/* Mobile/Browser */
+	@media only screen and (max-width: 767px) {}
+	
+	/* Mobile Landscape/Browser */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+	
+	/* Anything smaller than standard 960 */
+	@media only screen and (max-width: 959px) {}
+	
+	/* iPad Portrait Only */
+	@media only screen and (min-width: 768px) and (max-width: 991px) and (max-device-width: 1000px) {}
+	
+	/* Mobile Only */
+	@media only screen and (max-width: 767px) and (max-device-width: 1000px) {}
+	
+	/* Mobile Landscape Only */
+	@media only screen and (min-width: 480px) and (max-width: 767px) and (max-device-width: 1000px) {}
+	
+
+/* #Font-Face
+================================================== */
+/* 	This is the proper syntax for an @font-face file 
+		Just create a "fonts" folder at the root, 
+		copy your FontName into code below and remove
+		comment brackets */
+		
+/*	@font-face {
+	    font-family: 'FontName';
+	    src: url('../fonts/FontName.eot');
+	    src: url('../fonts/FontName.eot?iefix') format('eot'),
+	         url('../fonts/FontName.woff') format('woff'),
+	         url('../fonts/FontName.ttf') format('truetype'),
+	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+*/

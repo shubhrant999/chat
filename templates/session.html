@@ -37,9 +37,6 @@
       })
 
       socket.on( 'my response', function( msg ) {
-        console.log(msg.user_name);
-        console.log(msg.reciever);
-        console.log(username);
         if( typeof msg.user_name !== 'undefined' ) {         
           if(msg.user_name==username || ( msg.user_name=='Admin' && msg.reciever==username) ){
             $( 'div.message_holder' ).append( '<div><b style="color: #000">'+msg.user_name+'</b> '+msg.message+'</div>' )

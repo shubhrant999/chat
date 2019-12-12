@@ -7,6 +7,12 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'vnkdjnfjknfl1232#'
 socketio = SocketIO(app)
 
+
+@app.route('/')
+def index():
+    return render_template('login.html')
+
+
 @app.route('/<user_id>')
 def sessions(user_id):
     session['user'] = user_id 
