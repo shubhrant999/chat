@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session
+from flask import Flask, render_template, session, request
 from flask_socketio import SocketIO
 from flask_socketio import send, join_room, leave_room
 
@@ -7,16 +7,27 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'vnkdjnfjknfl1232#'
 socketio = SocketIO(app)
 
+@app.route('/chat/<user_id>')
+def chat(user_id):
+    session['user'] = user_id 
+    return render_template('chat.html')
 
 @app.route('/')
 def index():
     return render_template('login.html')
 
+@app.route('/login', methods=['POST'])
+def login():
+    if request.method=='POST':
+        if request.form['password'] == 'Admin':
+            username = request.form['username']
+            return chat(username)
+        else:
+            return 'Wrong Credentials.'
+    
 
-@app.route('/<user_id>')
-def sessions(user_id):
-    session['user'] = user_id 
-    return render_template('session.html')
+
+
 
 @app.route('/admin')
 def client():
